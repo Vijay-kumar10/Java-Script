@@ -172,7 +172,16 @@ let arr = [1,2,3,4,5];
 // console.log(result);
 
 //return the greatest elment
-let big = arr.reduce((prev,curr)=>{
-    return prev > curr?prev : curr;
-})
-console.log(big);
+// let big = arr.reduce((prev,curr)=>{
+//     return prev > curr?prev : curr;
+// })
+// console.log(big);
+
+
+// ----------------------------------------------------DOM START------------------------------
+
+// alert("Hello ereryone")
+// console.log("hello");
+// window.console.log("hello2");
+
+// console.dir(document.body.childNodes);
