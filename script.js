@@ -185,13 +185,86 @@ let arr = [1,2,3,4,5];
 // window.console.log("hello2");
 
 // console.dir(document.body.childNodes);
-let heading = document.getElementById("header");
-console.dir(heading);
+// let heading = document.getElementById("header");
+// console.dir(heading);
 
-let heading2 = document.getElementsByClassName("heading2");
-console.dir(heading2);
+// let heading2 = document.getElementsByClassName("heading2");
+// console.dir(heading2);
 
-let parah = document.getElementsByTagName("p");
-console.dir(parah);
+// let parah = document.getElementsByTagName("p");
+// console.dir(parah);
+
+// Query selector start from here
+// let parah1 = document.querySelector("p"); //give the first tag
+// console.dir(parah1);
+
+// let parahs = document.querySelectorAll("P");
+// console.dir(parahs); 
+
+// let btn = document.querySelector("#btn");
+// console.dir(btn);
 
 
+//advanced dom and access the attributes is start ----------------------------------------
+
+// let div = document.querySelector("div");
+// console.log(div);
+
+// let id = div.getAttribute("id");
+// console.log(id);
+
+//  let div = document.querySelector("div");
+//  console.log(div);
+//  div.style.backgroundColor = "red"; 
+
+
+//----------------------------- insert elements-------------
+// let newbtn = document.createElement("button");
+// newbtn.innerText = "click me!";
+
+// let div = document.querySelector("div");
+// div.append(newbtn);
+// div.prepend(newbtn);
+// div.before(newbtn);
+// div.after(newbtn);
+
+//delete the paragraph from code
+// let parah = document.querySelector("p");
+// parah.after(newbtn)
+//delet the parah
+// parah.remove();
+
+// let btn1 = document.createElement("button");
+// btn1.style.color = "white";
+// btn1.innerText = "click me!";
+// btn1.style.backgroundColor = "red";
+// btn1.style.width = "100px";
+// btn1.style.height = "20px";
+// btn1.style.fontSize = "10px";
+// btn1.style.fontWeight = "bold";
+// document.body.append(btn1);
+
+// //access the paragraph
+// let parah = document.querySelector("p");
+// parah.style.color = "red";
+
+// parah.getAttribute("class")  
+
+
+// let btn1 = document.querySelector("#btn1");
+// btn1.onclick = ()=>{
+//     console.log("button was click");
+// }
+// btn2.ondblclick = ()=>{
+//     console.log("button was click two times");
+// }
+
+let btn1 = document.querySelector("#btn1");
+
+btn1.onclick = (e)=>{ 
+    console.log(e);
+    console.log(e.type);
+    console.log(e.target);
+    console.log(e.clientX);
+    console.log(e.clientY);
+}

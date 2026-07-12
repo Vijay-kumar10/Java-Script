@@ -1,3 +1,22 @@
-h1{
+#box1{
+    height: 150px;
+    width: 300px;
+    color: dodgerblue;
+    background-color: greenyellow;
+    border: 2px solid blac;
+    text-align: center;
+    margin: 0 30%;
+    margin-bottom: 20px;
+}
+
+.newClass{
+    background-color: green;
+}
+
+#btn1{
+    width: 300px;
+    height: 50px;
     color: red;
+    background-color: yellow;
+    margin: 0 30%;
 }
