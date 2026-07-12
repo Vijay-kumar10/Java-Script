@@ -261,10 +261,42 @@ let arr = [1,2,3,4,5];
 
 let btn1 = document.querySelector("#btn1");
 
-btn1.onclick = (e)=>{ 
-    console.log(e);
-    console.log(e.type);
-    console.log(e.target);
-    console.log(e.clientX);
-    console.log(e.clientY);
+// btn1.onclick = (e)=>{ 
+//     console.log(e);
+//     console.log(e.type);
+//     console.log(e.target);
+//     console.log(e.clientX);
+//     console.log(e.clientY);
+// }
+ 
+//---------------------enent listner----------------
+btn1.addEventListener("click",()=>{
+    console.log("button1 was clicked! handler-1");
+})
+
+btn1.addEventListener("click",()=>{
+    console.log("button1 was clicked! handler-2");
+})
+const handler3 = ()=>{
+    console.log("button1 was clicked! handler-3");}
+
+btn1.addEventListener("click",handler3)
+
+btn1.addEventListener("click",()=>{
+    console.log("button1 was clicked! handler-4");
+})
+
+btn1.removeEventListener("click",handler3);
+
+let dark = true;
+const changeColor = ()=>{
+    if(dark){
+        document.body.style.backgroundColor = "Black";
+        document.body.style.color = "white";
+    }else{
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+    }
+    dark = !dark;
 }
+btn1.addEventListener("click",changeColor);
