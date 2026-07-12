@@ -185,3 +185,13 @@ let arr = [1,2,3,4,5];
 // window.console.log("hello2");
 
 // console.dir(document.body.childNodes);
+let heading = document.getElementById("header");
+console.dir(heading);
+
+let heading2 = document.getElementsByClassName("heading2");
+console.dir(heading2);
+
+let parah = document.getElementsByTagName("p");
+console.dir(parah);
+
+
