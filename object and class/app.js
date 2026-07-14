@@ -73,20 +73,44 @@
 // getData(2);
 // getData(3);
 
+// function getData(dataId,getNextData){
+//     setTimeout(() => {
+//         console.log("Data is occur : ",dataId);
+//         if(getNextData){
+//             getNextData();
+//         }
+//     }, 2000);
+// }
+
+// //call-back is generated 
+// getData(1,()=>{
+//     getData(2,()=>{
+//         getData(3,()=>{
+//             getData(4);
+//         });
+//     });
+// });
+
+// //Promises is occur to solve this call back hell problem
+// let promise = new Promise((resolve,reject)=>{
+//     console.log("I am a promise.");
+//     // resolve("success");
+//     reject("some error occured !! ")
+// })
+// console.log(promise);
+
 function getData(dataId,getNextData){
-    setTimeout(() => {
+    return new Promise((resolve,reject)=>{
+       setTimeout(() => {
         console.log("Data is occur : ",dataId);
+        resolve("success");
         if(getNextData){
             getNextData();
         }
-    }, 2000);
-}
-
-//call-back is generated 
-getData(1,()=>{
-    getData(2,()=>{
-        getData(3,()=>{
-            getData(4);
-        });
+    }, 5000); 
     });
-});
+}
+let result = getData(123);
+console.log(result);
+
+
