@@ -28,15 +28,37 @@ const karan = {
 karan.__proto__ = employee;
 
 //---------------class and object -------------
-// class ToyotaCar{
-//     start(){
-//         console.log("Start");
-//     }
-//     stop(){
-//         console.log("Start");
-//     }
-// }
-// let fortuner = new ToyotaCar();
-// console.log(fortuner);
+class ToyotaCar{
+    start(){
+        console.log("Start");
+    }
+    stop(){
+        console.log("Start");
+    }
+}
+let fortuner = new ToyotaCar();
 
 //-----------callback start
+
+function sum(a,b){
+    console.log("sum of a and b : ",a+b);
+}
+
+function product(a,b){
+    console.log("product of a and b : ",a*b);
+}
+
+function calculator(a,b,sumCallBack){
+    sumCallBack(a,b);
+}
+
+calculator(5,2,sum);
+calculator(5,2,product);
+
+// callback hello function
+const hello = ()=>{
+    console.log("Hello is am ececuted after 3 minutes");
+}
+setTimeout(hello,3000);
+
+//call backhell is a problem
