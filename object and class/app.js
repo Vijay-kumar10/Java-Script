@@ -176,3 +176,44 @@ function asyncFun2(){
 //     console.log(res);
 // })
 
+//---------------------Async-await funciton -------------
+async function hello() {
+    console.log("Hello");
+}
+hello();
+
+// function api() {
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         console.log("weather data");
+//         resolve(200)
+//     }, 2000);
+//   })
+// }
+// async function weatherData(){
+//     await api();
+//     await api();
+//     await api();
+// }
+// weatherData();
+
+function getData(dataId){
+    return new Promise((resolve,reject)=>{
+       setTimeout(() => {
+        console.log("Data is occur : ",dataId);
+        resolve("success");
+
+    }, 2000); 
+    });
+}
+// same thing do multiple call at same time
+async function getAllData() {
+    await getData(1);
+    await getData(2);
+    await getData(3);
+    await getData(4);
+}
+getAllData();
+
+
+
