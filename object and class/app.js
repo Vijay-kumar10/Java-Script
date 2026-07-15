@@ -99,18 +99,80 @@
 // })
 // console.log(promise);
 
-function getData(dataId,getNextData){
+// function getData(dataId,getNextData){
+//     return new Promise((resolve,reject)=>{
+//        setTimeout(() => {
+//         console.log("Data is occur : ",dataId);
+//         resolve("success");
+//         if(getNextData){
+//             getNextData();
+//         }
+//     }, 5000); 
+//     });
+// }
+// let result = getData(123);
+// console.log(result);
+
+// const getPromise = ()=>{
+//    return new Promise((resolve,reject)=>{
+//         console.log("I am a promise.");
+//         // resolve("success");
+//         reject("Network error occur");
+//     })
+// };
+// let promise  = getPromise();
+// promise.then((res)=>{
+//     console.log("Promise fulfilled successfully",res);
+// })
+// promise.catch((err)=>{
+//     console.log("some error is occur during execution...!!",err);
+// })
+
+//------------promise chaining-------------
+function asyncFun(){
     return new Promise((resolve,reject)=>{
-       setTimeout(() => {
-        console.log("Data is occur : ",dataId);
-        resolve("success");
-        if(getNextData){
-            getNextData();
-        }
-    }, 5000); 
+        setTimeout(() => {
+            console.log("some data 1 occur.");
+            resolve("success");
+        }, 2000);
     });
 }
-let result = getData(123);
-console.log(result);
+function asyncFun2(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            console.log("some data 2 occur.");
+            resolve("success");
+        }, 2000);
+    });
+}
+// console.log("Fetching data-1....");
+// asyncFun().then((res)=>{
+//     console.log("Request status : ",res);
+//         console.log("Fetching data-2....");
+//         asyncFun2().then((res)=>{
+//             console.log("Request status : ",res);
+//         })
+// });
 
+
+// function getData(dataId){
+//     return new Promise((resolve,reject)=>{
+//        setTimeout(() => {
+//         console.log("Data is occur : ",dataId);
+//         resolve("success");
+
+//     }, 3000); 
+//     });
+// }
+
+//chaining start from here
+// getData(1).then(()=>{
+//     return getData(2);
+// }).then(()=>{
+//     return getData(3);
+// }).then(()=>{
+//     return getData(4);
+// }).then((res)=>{
+//     console.log(res);
+// })
 
