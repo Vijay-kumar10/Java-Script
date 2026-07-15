@@ -129,22 +129,22 @@
 // })
 
 //------------promise chaining-------------
-function asyncFun(){
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            console.log("some data 1 occur.");
-            resolve("success");
-        }, 2000);
-    });
-}
-function asyncFun2(){
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            console.log("some data 2 occur.");
-            resolve("success");
-        }, 2000);
-    });
-}
+// function asyncFun(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             console.log("some data 1 occur.");
+//             resolve("success");
+//         }, 2000);
+//     });
+// }
+// function asyncFun2(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             console.log("some data 2 occur.");
+//             resolve("success");
+//         }, 2000);
+//     });
+// }
 // console.log("Fetching data-1....");
 // asyncFun().then((res)=>{
 //     console.log("Request status : ",res);
@@ -177,10 +177,10 @@ function asyncFun2(){
 // })
 
 //---------------------Async-await funciton -------------
-async function hello() {
-    console.log("Hello");
-}
-hello();
+// async function hello() {
+//     console.log("Hello");
+// }
+// hello();
 
 // function api() {
 //   return new Promise((resolve,reject)=>{
@@ -197,33 +197,54 @@ hello();
 // }
 // weatherData();
 
-function getData(dataId){
-    return new Promise((resolve,reject)=>{
-       setTimeout(() => {
-        console.log("Data is occur : ",dataId);
-        resolve("success");
+// function getData(dataId){
+//     return new Promise((resolve,reject)=>{
+//        setTimeout(() => {
+//         console.log("Data is occur : ",dataId);
+//         resolve("success");
 
-    }, 2000); 
-    });
-}
+//     }, 2000); 
+//     });
+// }
 // same thing do multiple call at same time
-async function getAllData() {
-    await getData(1);
-    await getData(2);
-    await getData(3);
-    await getData(4);
-}
-getAllData();
+
+// async function getAllData() {
+//     await getData(1);
+//     await getData(2);
+//     await getData(3);
+//     await getData(4);
+// }
+// getAllData();
 
 //-----------implement the IIFE------------
 
-(async function getAllData() {
-    await getData(1);
-    await getData(2);
-    await getData(3);
-    await getData(4);
-})();
+// (async function getAllData() {
+//     await getData(1);
+//     await getData(2);
+//     await getData(3);
+//     await getData(4);
+// })();
 
 
+//------------fetch api -------------------
+let url = "https://meowfacts.herokuapp.com/";
+// let promise = fetch(url);
+// console.log(promise);
 
+const getFact = async ()=>{
+    console.log("Getting data...",);
+    let response = await fetch(url);
+    console.log(response);
+    let data = await response.json();
+    console.log(data);
+}
 
+function getFacts() {
+  fetch(url)
+    .then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        console.log(data);
+    });
+}
+getFacts();
