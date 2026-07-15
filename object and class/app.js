@@ -215,5 +215,10 @@ async function getAllData() {
 }
 getAllData();
 
+//-----------implement the IIFE------------
+(function(){
+    
+})
+
 
 
